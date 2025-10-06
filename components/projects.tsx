@@ -197,8 +197,8 @@ const projects: Project[] = [
   },
   {
     title: "anybanq.lk",
-    company: "Freelance",
-    period: "Personal Project",
+    company: "2021",
+    period: "Freelance",
     description: "Full-stack web application built with Laravel framework.",
     details: [
       "Developed using PHP, Laravel, jQuery, MySql, and Bootstrap",
@@ -216,7 +216,7 @@ const projects: Project[] = [
   },
   {
     title: "CashFlow Mobile App",
-    company: "Personal Project",
+    company: "2024",
     period: "Personal Project",
     description:
       "Mobile application for financial tracking with clean architecture.",
@@ -234,8 +234,8 @@ const projects: Project[] = [
   },
   {
     title: "techihire.com",
-    company: "Freelance",
-    period: "Personal Project",
+    company: "2024",
+    period: "Freelance",
     description: "Backend system for tech hiring platform.",
     details: [
       "Developed backend using NestJS, PostgreSQL, and Prisma ORM",

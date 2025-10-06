@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { Briefcase, Calendar } from "lucide-react"
-import { Card } from "@/components/ui/card"
+import { useEffect, useRef, useState } from "react";
+import { Briefcase, Calendar } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 const experiences = [
   {
-    company: "Softcodeit Solutions (Pvt) Ltd",
+    company: "Orel IT",
     role: "Software Engineer",
     period: "Feb 2025 - Present",
     description:
@@ -19,7 +19,7 @@ const experiences = [
     ],
   },
   {
-    company: "Orel IT",
+    company: "Softcodeit Solutions",
     role: "Software Engineer",
     period: "Dec 2021 - Feb 2025",
     description:
@@ -35,7 +35,8 @@ const experiences = [
     company: "Original Apparel (Pvt) Ltd",
     role: "IT Executive",
     period: "Aug 2018 - Nov 2021",
-    description: "Developed real-time production monitoring system and provided comprehensive IT support.",
+    description:
+      "Developed real-time production monitoring system and provided comprehensive IT support.",
     highlights: [
       "Built production monitoring system with PHP, CodeIgniter, MySQL",
       "Implemented WebSocket for real-time updates",
@@ -53,33 +54,41 @@ const experiences = [
       "Implemented financial and operational modules",
     ],
   },
-]
+];
 
 export function Experience() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="experience" ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section
+      id="experience"
+      ref={sectionRef}
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30"
+    >
       <div className="container mx-auto max-w-5xl">
-        <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+        <div
+          className={`space-y-12 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
           <div className="space-y-2">
             <h2 className="text-3xl sm:text-4xl font-bold">Work Experience</h2>
             <div className="h-1 w-20 bg-primary rounded-full"></div>
@@ -94,7 +103,9 @@ export function Experience() {
                 <div className="space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                     <div className="space-y-1">
-                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{exp.role}</h3>
+                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                        {exp.role}
+                      </h3>
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Briefcase className="h-4 w-4" />
                         <span className="font-medium">{exp.company}</span>
@@ -105,10 +116,15 @@ export function Experience() {
                       <span>{exp.period}</span>
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-pretty">{exp.description}</p>
+                  <p className="text-muted-foreground text-pretty">
+                    {exp.description}
+                  </p>
                   <ul className="space-y-2">
                     {exp.highlights.map((highlight, i) => (
-                      <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                      <li
+                        key={i}
+                        className="flex gap-2 text-sm text-muted-foreground"
+                      >
                         <span className="text-primary mt-1">▹</span>
                         <span>{highlight}</span>
                       </li>
@@ -121,5 +137,5 @@ export function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }
