@@ -47,7 +47,7 @@ export function Hero() {
             </div>
             <div className="flex gap-4 pt-4">
               <a
-                href="https://github.com"
+                href="https://github.com/nirangaL"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -55,7 +55,7 @@ export function Hero() {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/niranga-lakshan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
