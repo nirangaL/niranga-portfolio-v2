@@ -1,41 +1,49 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { Mail, Phone, Linkedin, Github } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { useEffect, useRef, useState } from "react";
+import { Mail, Phone, Linkedin, Github } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export function Contact() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="py-20 px-4 sm:px-6 lg:px-8"
+    >
       <div className="container mx-auto max-w-4xl">
-        <div className={`space-y-12 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+        <div
+          className={`space-y-12 ${
+            isVisible ? "animate-fade-in-up" : "opacity-0"
+          }`}
+        >
           <div className="text-center space-y-4">
             <h2 className="text-3xl sm:text-4xl font-bold">Get In Touch</h2>
             <div className="h-1 w-20 bg-primary rounded-full mx-auto"></div>
             <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-              Feel free to reach out!
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your visions. Feel free to reach out!
             </p>
           </div>
 
@@ -82,7 +90,7 @@ export function Contact() {
                 <div className="space-y-1 flex-1">
                   <h3 className="font-semibold">LinkedIn</h3>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/niranga-lakshan/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -101,7 +109,7 @@ export function Contact() {
                 <div className="space-y-1 flex-1">
                   <h3 className="font-semibold">GitHub</h3>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/nirangaL"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -133,5 +141,5 @@ export function Contact() {
         </div>
       </footer>
     </section>
-  )
+  );
 }
